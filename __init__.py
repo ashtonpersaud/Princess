@@ -16,6 +16,7 @@ class princessSkill(MycroftSkill):
 
     @intent_handler('princess.intent')
     def handle_not_are_you_intent(self, message):
+        self.speak_dialog("No I am just a knight but look at my wave.")
         serA = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
         serA.flush()
         serA.write(b"princess")
@@ -28,9 +29,6 @@ class princessSkill(MycroftSkill):
         serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
         serD.flush()
         serD.write(b"princess")
-        time.sleep(1.5)
-        self.speak_dialog("No I am just a knight but look at my wave.")
-      
 
     def stop(self):
         pass
