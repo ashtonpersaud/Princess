@@ -28,6 +28,7 @@ class princessSkill(MycroftSkill):
         serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
         serD.flush()
         serD.write(b"princess")
+        time.sleep(1.5)
         self.speak_dialog("No I am just a knight but look at my wave.")
 
     def stop(self):
